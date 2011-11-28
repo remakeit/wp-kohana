@@ -1,1 +1,4 @@
-<?php echo Request::factory('wordpress/foundation/page')->execute()->send_headers()->body(); ?>
+<?php
+$params = kwp_get_params();
+$params = implode('/', $params);
+echo Request::factory('wordpress/foundation/page/'.$params)->execute()->send_headers()->body();
